@@ -13,7 +13,7 @@
     "node": ">= 10.0.0"
   },
   "scripts": {
-    "start": "npm run storybook",
+    "start": "npm run cosmos",
     "build": "npm run build:cosmos",
     "cosmos": "cosmos",
     "build:cosmos": "cosmos-export",
