@@ -61,6 +61,7 @@ VerticalList.propTypes = {
   side: PropTypes.oneOf([SIDE_LEFT, SIDE_RIGHT]),
   noMargin: PropTypes.bool,
   grid: PropTypes.bool,
+  gridMobile: PropTypes.bool,
 }
 
 export default VerticalList
