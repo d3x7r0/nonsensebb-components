@@ -34,7 +34,7 @@
     }
   }
 
-  &--grid--mobile {
+  &--grid-mobile {
     @supports (display: grid) {
       @media (max-width: $desktopBreakpoint) {
         display: grid;
