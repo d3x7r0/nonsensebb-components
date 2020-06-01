@@ -14,6 +14,7 @@ function VerticalList(props) {
     className,
     side,
     grid,
+    gridMobile,
     noMargin,
     ...rest
   } = props
@@ -26,6 +27,7 @@ function VerticalList(props) {
         side,
         noMargin,
         grid,
+        gridMobile,
       })}
     >
       {children}
@@ -37,8 +39,9 @@ function buildClassNames(props) {
   const {
     className,
     side = SIDE_LEFT,
-    noMargin = false,
-    grid = false,
+    noMargin,
+    grid,
+    gridMobile,
   } = props
 
   return classNames(
@@ -48,6 +51,7 @@ function buildClassNames(props) {
       [styles['m-vertical-list--right']]: side === SIDE_RIGHT,
       [styles['m-vertical-list--no-margin']]: noMargin,
       [styles['m-vertical-list--grid']]: grid,
+      [styles['m-vertical-list--grid-mobile']]: gridMobile,
     },
   )
 }

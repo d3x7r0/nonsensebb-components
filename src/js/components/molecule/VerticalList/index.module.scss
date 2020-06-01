@@ -33,4 +33,18 @@
       }
     }
   }
+
+  &--grid--mobile {
+    @supports (display: grid) {
+      @media (max-width: $desktopBreakpoint) {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+      }
+
+      @media (max-width: $tabletBreakpoint) {
+        display: grid;
+        grid-template-columns: auto auto;
+      }
+    }
+  }
 }
