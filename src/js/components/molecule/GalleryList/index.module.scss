@@ -1,0 +1,61 @@
+@import "../../../../css/variables";
+@import "../../../../css/mixins";
+
+.m-gallery-list {
+  list-style: none;
+  margin: 1.5em 0;
+  padding: 0;
+  text-align: center;
+
+  @include clearfix();
+
+  &__entry {
+    display: inline-block;
+    margin-bottom: 0.7em;
+    margin-right: -0.06em;
+    min-height: 6em; // reduce jumping around when default img width/height isn't set
+    padding: 0 0.7em;
+    width: 50%;
+
+    a img {
+      outline: 0 solid $altDominantColor;
+      transition: ($transitionDuration/4) outline;
+
+      &:hover,
+      &:active,
+      &:focus {
+        outline-width: 5px;
+      }
+    }
+
+    @media (min-width: $tabletBreakpoint) {
+      width: 33%;
+    }
+  }
+
+  &--no-margin {
+    margin: 0;
+  }
+
+  @supports (display: flex) {
+    & {
+      align-items: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &--alignBottom {
+      align-items: flex-end;
+    }
+
+    &__entry {
+      flex: 0 0 50%;
+      margin-right: 0;
+
+      @media (min-width: $tabletBreakpoint) {
+        flex-basis: 33%;
+      }
+    }
+  }
+}

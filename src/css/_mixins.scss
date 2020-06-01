@@ -1,0 +1,19 @@
+@import "variables";
+
+@mixin clearfix($before: false) {
+  @if $before == true {
+    &::before {
+      clear: both;
+      content: "";
+      display: table;
+    }
+  }
+
+  @else {
+    &::after {
+      clear: both;
+      content: "";
+      display: table;
+    }
+  }
+}

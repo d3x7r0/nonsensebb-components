@@ -1,0 +1,15 @@
+/* Fallback colors */
+$dominantColor: var(--dominant-color, currentColor);
+$altDominantColor: var(--alt-dominant-color, var(--dominant-color, currentColor));
+$altColor: var(--alt-color, #E8E8E8);
+$bgColor: var(--bg-color, black);
+$borderColor: var(--border-color, darkgray);
+
+/*  Breakpoints */
+$tabletBreakpoint: 720px;
+$desktopBreakpoint: 1280px;
+$largeScreenBreakpoint: 1920px;
+
+/*  Durations */
+$loadingDuration: 2s;
+$transitionDuration: 300ms;

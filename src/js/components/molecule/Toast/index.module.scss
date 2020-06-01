@@ -1,0 +1,92 @@
+@import "../../../../css/variables";
+
+$cornerSize: 1em;
+
+.m-toast {
+  bottom: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 999;
+
+  &__inner {
+    background: $bgColor;
+    border-top: 1px solid $borderColor;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8em 0.6em;
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    transition-property: ($transitionDuration/2) opacity;
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--alt-dominant-color);
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 0.7;
+      text-decoration: underline;
+    }
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    color: var(--alt-dominant-color);
+    cursor: pointer;
+    margin-left: 0.6em;
+    outline: none;
+    padding: 0.5em;
+
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+      opacity: 0.7;
+      text-decoration: underline;
+    }
+  }
+
+  @media (min-width: $tabletBreakpoint) {
+    &__inner {
+      padding: 0.8em 1.2em;
+    }
+  }
+
+  @media (min-width: $desktopBreakpoint) {
+    bottom: 2em;
+    box-shadow: none;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
+    left: initial;
+    max-width: 320px;
+    right: 2em;
+
+    &__inner {
+      border: 1px solid $borderColor;
+      clip-path: polygon(calc(100% - #{$cornerSize}) 0%, 100% #{$cornerSize}, 100% 100%, 0 100%, 0 0);
+      padding: 1em;
+      position: relative;
+
+      &::after {
+        background: $borderColor;
+        content: '';
+        height: $cornerSize;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: $cornerSize;
+      }
+    }
+  }
+}
