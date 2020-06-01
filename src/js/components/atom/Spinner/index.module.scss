@@ -22,25 +22,25 @@ $loadingDuration: 2s;
 
     &--one {
       animation-name: a-spinner--one;
-      background: $dominantColor;
+      background: $spinnerColor;
       transform: translate(0, 0);
     }
 
     &--two {
       animation-name: a-spinner--two;
-      background: $altColor;
+      background: $spinnerAltColor;
       transform: translate(1.1em, 0);
     }
 
     &--three {
       animation-name: a-spinner--three;
-      background: $dominantColor;
+      background: $spinnerColor;
       transform: translate(1.1em, 1.1em);
     }
 
     &--four {
       animation-name: a-spinner--four;
-      background: $altColor;
+      background: $spinnerAltColor;
       transform: translate(0, 1.1em);
     }
   }

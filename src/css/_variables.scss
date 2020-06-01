@@ -4,6 +4,8 @@ $altDominantColor: var(--alt-dominant-color, var(--dominant-color, currentColor)
 $altColor: var(--alt-color, #E8E8E8);
 $bgColor: var(--bg-color, black);
 $borderColor: var(--border-color, darkgray);
+$spinnerColor: var(--spinner-color, var(--dominant-color, currentColor));
+$spinnerAltColor: var(--spinner-alt-color, var(--alt-color, #E8E8E8));
 
 /*  Breakpoints */
 $tabletBreakpoint: 720px;

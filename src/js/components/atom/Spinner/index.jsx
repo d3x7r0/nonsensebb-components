@@ -3,7 +3,7 @@ import { h } from 'preact'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
-import { useAltColor, useDominantColor } from '../../../hooks'
+import { useCSSVariable } from '../../../hooks'
 
 import styles from './index.module.scss'
 
@@ -18,12 +18,14 @@ function Spinner(props) {
     ...rest
   } = props
 
-  let computedStyle = useDominantColor(
+  let computedStyle = useCSSVariable(
+    'spinner-color',
     colorMain,
     style,
   )
 
-  computedStyle = useAltColor(
+  computedStyle = useCSSVariable(
+    'spinner-alt-color',
     colorAlt,
     computedStyle,
   )
