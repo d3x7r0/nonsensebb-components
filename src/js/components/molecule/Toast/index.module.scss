@@ -28,7 +28,7 @@ $cornerSize: 1em;
     &:hover,
     &:active,
     &:focus {
-      color: var(--alt-dominant-color);
+      color: var(--alt-dominant-color, var(--dominant-color));
     }
 
     &:hover,
@@ -42,7 +42,7 @@ $cornerSize: 1em;
   &__close {
     background: none;
     border: none;
-    color: var(--alt-dominant-color);
+    color: var(--alt-dominant-color, var(--dominant-color));
     cursor: pointer;
     margin-left: 0.6em;
     outline: none;
