@@ -8,6 +8,7 @@ import '../../../../css/reset.scss'
 export default (
   <GalleryList
     noMargin={false}
+    alignBottom={false}
     colorMain="#5388d3"
   >
     <GalleryListEntry>

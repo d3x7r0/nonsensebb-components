@@ -63,13 +63,19 @@ function GalleryInner(props) {
   const {
     caption,
     children,
+    alignBottom,
+    colorMain,
     ...rest
   } = props
 
   if (caption) {
     return (
       <Figure caption={caption} {...rest}>
-        <GalleryList noMargin>
+        <GalleryList
+          noMargin
+          alignBottom={alignBottom}
+          colorMain={colorMain}
+        >
           {children}
         </GalleryList>
       </Figure>
@@ -77,7 +83,11 @@ function GalleryInner(props) {
   }
 
   return (
-    <GalleryList {...rest}>
+    <GalleryList
+      alignBottom={alignBottom}
+      colorMain={colorMain}
+      {...rest}
+    >
       {children}
     </GalleryList>
   )
@@ -123,25 +133,25 @@ const GalleryEntry = (props) => {
   )
 }
 
-const picturePropTypes = {
+const picturePropTypes = PropTypes.shape({
   src: PropTypes.string.isRequired,
   alt: PropTypes.string,
   caption: PropTypes.element,
-}
+})
 
-const entryPropTypes = {
+const entryPropTypes = PropTypes.shape({
   id: PropTypes.string,
   href: PropTypes.string,
   caption: PropTypes.element,
   picture: picturePropTypes.isRequired,
-}
+})
 
 Gallery.propTypes = {
+  noMargin: PropTypes.bool,
+  alignBottom: PropTypes.bool,
+  colorMain: PropTypes.string,
   lightbox: PropTypes.bool,
-  entries: PropTypes.arrayOf(
-    PropTypes.shape(entryPropTypes),
-  ).isRequired,
-  ...Gallery.propTypes,
+  entries: PropTypes.arrayOf(entryPropTypes).isRequired,
 }
 
 export default Gallery

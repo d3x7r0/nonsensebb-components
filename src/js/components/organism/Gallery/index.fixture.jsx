@@ -10,7 +10,7 @@ const ENTRIES = [
     id: 'kitten_1',
     caption: 'A nice kitty',
     picture: {
-      src: 'https://placekitten.com/240/180',
+      src: 'https://placekitten.com/240/200',
       alt: 'Placekitten',
     },
   },
@@ -30,5 +30,7 @@ export default (
   <Gallery
     entries={ENTRIES}
     lightbox={true}
+    alignBottom={false}
+    colorMain="#5388d3"
   />
 )
