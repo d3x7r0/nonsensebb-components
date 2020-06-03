@@ -2,6 +2,7 @@
 import { h } from 'preact'
 import { useMemo } from 'preact/hooks'
 import PropTypes from 'prop-types'
+import Img from 'react-cool-img'
 
 import Figure from '../../atom/Figure'
 import LinkWrapper from '../../atom/LinkWrapper'
@@ -14,6 +15,7 @@ function Gallery(props) {
   const {
     lightbox = false,
     entries = [],
+    ImgElement = 'img',
     ...rest
   } = props
 
@@ -152,6 +154,7 @@ Gallery.propTypes = {
   colorMain: PropTypes.string,
   lightbox: PropTypes.bool,
   entries: PropTypes.arrayOf(entryPropTypes).isRequired,
+  ImgElement: PropTypes.elementType,
 }
 
 export default Gallery
