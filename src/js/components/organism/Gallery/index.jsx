@@ -2,7 +2,6 @@
 import { h } from 'preact'
 import { useMemo } from 'preact/hooks'
 import PropTypes from 'prop-types'
-import Img from 'react-cool-img'
 
 import Figure from '../../atom/Figure'
 import LinkWrapper from '../../atom/LinkWrapper'
@@ -15,7 +14,7 @@ function Gallery(props) {
   const {
     lightbox = false,
     entries = [],
-    ImgElement = 'img',
+    ImgElement,
     ...rest
   } = props
 
@@ -44,6 +43,7 @@ function Gallery(props) {
           <GalleryEntry
             {...entry}
             lightbox={lightboxGroup}
+            ImgElement={ImgElement}
           />
         </GalleryListEntry>
       ))}
@@ -101,11 +101,12 @@ const GalleryEntry = (props) => {
     alt,
     href,
     lightbox,
+    ImgElement = 'img',
     ...rest
   } = props
 
   const img = (
-    <img alt={alt} {...picture} />
+    <ImgElement alt={alt} {...picture} />
   )
 
   let inner = img
