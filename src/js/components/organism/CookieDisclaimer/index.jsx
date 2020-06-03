@@ -25,7 +25,11 @@ function CookieDisclaimer(props) {
   }
 
   return (
-    <Toast {...rest} onClose={() => setSeen(true)}>
+    <Toast
+      {...rest}
+      closed={seen}
+      onClose={() => setSeen(true)}
+    >
       {text}<br />
       <LinkWrapper href={link} {...linkProps}>
         {linkText}
@@ -39,7 +43,15 @@ CookieDisclaimer.propTypes = {
   link: PropTypes.string.isRequired,
   linkText: PropTypes.string,
   linkProps: LinkWrapper.propTypes,
-  ...Toast.propTypes,
+  closeLabel: PropTypes.element,
+  colorMain: PropTypes.string,
+  colorBackground: PropTypes.string,
+  colorBorder: PropTypes.string,
+  className: PropTypes.string,
+  style: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 }
 
 export default CookieDisclaimer
