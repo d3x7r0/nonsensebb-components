@@ -84,7 +84,7 @@ Figure.propTypes = {
     PropTypes.object,
   ]),
   className: PropTypes.string,
-  caption: PropTypes.element,
+  caption: PropTypes.node,
   border: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.string,

@@ -139,13 +139,13 @@ const GalleryEntry = (props) => {
 const picturePropTypes = PropTypes.shape({
   src: PropTypes.string.isRequired,
   alt: PropTypes.string,
-  caption: PropTypes.element,
+  caption: PropTypes.node,
 })
 
 const entryPropTypes = PropTypes.shape({
   id: PropTypes.string,
   href: PropTypes.string,
-  caption: PropTypes.element,
+  caption: PropTypes.node,
   picture: picturePropTypes.isRequired,
 })
 

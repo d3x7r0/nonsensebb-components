@@ -78,7 +78,7 @@ function buildClassName({ className }) {
 Toast.propTypes = {
   closed: PropTypes.bool,
   onClose: PropTypes.func.isRequired,
-  closeLabel: PropTypes.element,
+  closeLabel: PropTypes.node,
   colorMain: PropTypes.string,
   colorBackground: PropTypes.string,
   colorBorder: PropTypes.string,

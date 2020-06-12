@@ -43,7 +43,7 @@ CookieDisclaimer.propTypes = {
   link: PropTypes.string.isRequired,
   linkText: PropTypes.string,
   linkProps: LinkWrapper.propTypes,
-  closeLabel: PropTypes.element,
+  closeLabel: PropTypes.node,
   colorMain: PropTypes.string,
   colorBackground: PropTypes.string,
   colorBorder: PropTypes.string,

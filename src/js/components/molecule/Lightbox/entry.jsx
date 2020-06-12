@@ -62,7 +62,7 @@ function LightboxEntry(props) {
 
 LightboxEntry.propTypes = {
   src: PropTypes.string.isRequired,
-  caption: PropTypes.element,
+  caption: PropTypes.node,
   group: PropTypes.string,
 }
 
