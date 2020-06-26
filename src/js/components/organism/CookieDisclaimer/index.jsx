@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-no-literals */
 /** @jsx h */
 import { h } from 'preact'
-import createPersistedState from 'use-persisted-state'
 import PropTypes from 'prop-types'
 
 import Toast from '../../molecule/Toast'
 import LinkWrapper from '../../atom/LinkWrapper'
+import { useLocalStorage } from '../../../hooks/storage'
 
-const usePopupSeen = createPersistedState('cookie-popup-seen')
+const COOKIE_SEEN_STORAGE_KEY = 'cookie-popup-seen'
 
 function CookieDisclaimer(props) {
   const {
@@ -18,7 +18,10 @@ function CookieDisclaimer(props) {
     ...rest
   } = props
 
-  const [seen, setSeen] = usePopupSeen(typeof window === 'undefined')
+  const [seen, setSeen] = useLocalStorage(
+    COOKIE_SEEN_STORAGE_KEY,
+    false,
+  )
 
   if (seen) {
     return null
