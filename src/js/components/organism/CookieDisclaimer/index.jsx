@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import Toast from '../../molecule/Toast'
 import LinkWrapper from '../../atom/LinkWrapper'
-import { useLocalStorage } from '../../../hooks/storage'
+import { useLocalStorage, useMounted } from '../../../hooks'
 
 const COOKIE_SEEN_STORAGE_KEY = 'cookie-popup-seen'
 
@@ -18,12 +18,14 @@ function CookieDisclaimer(props) {
     ...rest
   } = props
 
+  const isMounted = useMounted()
+
   const [seen, setSeen] = useLocalStorage(
     COOKIE_SEEN_STORAGE_KEY,
     false,
   )
 
-  if (seen) {
+  if (!isMounted || seen) {
     return null
   }
 

@@ -14,3 +14,8 @@ export {
 export {
   useMounted,
 } from './preact'
+
+export {
+  useLocalStorage,
+  useSessionStorage
+} from './storage'
