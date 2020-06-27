@@ -2,11 +2,11 @@
 
 .m-vertical-list {
   list-style: none;
-  margin: 1.3em -0.5em 1.3em 0;
+  margin: 1.3em 0;
   padding: 0;
 
   &__entry {
-    margin: 0 0.5em 0.5em 0;
+    margin: 0 0.25em 0.5em;
   }
 
   &--center {
@@ -20,7 +20,7 @@
   }
 
   &--no-margin {
-    margin: 0 -0.5em 0 0;
+    margin: 0;
   }
 
   &--grid {
