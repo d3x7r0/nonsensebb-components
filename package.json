@@ -67,7 +67,7 @@
     "react-feather": "^2.0.8",
     "react-image-lightbox": "^5.1.1",
     "sass": "^1.26.9",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^9.0.0",
     "style-loader": "^1.2.1",
     "stylelint": "^13.6.1",
     "stylelint-order": "^4.1.0",
