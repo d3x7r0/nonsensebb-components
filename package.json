@@ -2,8 +2,7 @@
   "name": "@nonsensebb/components",
   "version": "2020.6.6",
   "description": "Re-usable components for NonsenseBB websites",
-  "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "author": "Luis <Dextro> Nabais",
   "main": "src/js/index.js",
   "esnext": {
