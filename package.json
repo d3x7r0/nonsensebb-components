@@ -34,7 +34,7 @@
     "react-image-lightbox": "^5.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.3",
+    "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.1",
     "@nonsensebb/eslint-config-preact": "^0.1.7",
