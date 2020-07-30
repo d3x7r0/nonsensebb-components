@@ -8,7 +8,7 @@ import { LightboxProvider } from './context'
 
 // TODO: control gallery by hash
 function LightboxWrapper(props) {
-  const { children } = props
+  const { children, onChange } = props
 
   const [entries, setEntries] = useState({})
   const [sort, triggerSort] = useState(0)
@@ -56,12 +56,15 @@ function LightboxWrapper(props) {
 
     const idx = entries[group].findIndex(entry => entry.id === id)
 
-    setCurrent({
+    const newState = {
       open: true,
       group,
       idx,
-    })
-  }, [entries, setCurrent])
+    }
+
+    setCurrent(newState)
+    onChange && onChange(newState)
+  }, [entries, setCurrent, onChange])
 
   useLayoutEffect(() => {
     const order = []
@@ -82,8 +85,12 @@ function LightboxWrapper(props) {
   const { data: prevEntry } = state.idx > 0 && currentEntries[state.idx - 1] || {}
 
   const close = useCallback(
-    () => setCurrent({ open: false }),
-    [setCurrent],
+    () => {
+      const newState = { open: false }
+      setCurrent(newState)
+      onChange && onChange(newState)
+    },
+    [setCurrent, onChange],
   )
 
   const ctxValue = useMemo(
@@ -97,19 +104,27 @@ function LightboxWrapper(props) {
   )
 
   const onMoveNextRequest = useCallback(
-    () => setCurrent(state => ({
-      ...state,
-      idx: state.idx + 1,
-    })),
-    [setCurrent],
+    () => setCurrent(state => {
+      const newState = {
+        ...state,
+        idx: state.idx + 1,
+      }
+      onChange && onChange(newState)
+      return newState
+    }),
+    [setCurrent, onChange],
   )
 
   const onMovePrevRequest = useCallback(
-    () => setCurrent(state => ({
-      ...state,
-      idx: state.idx - 1,
-    })),
-    [setCurrent],
+    () => setCurrent(state => {
+      const newState = {
+        ...state,
+        idx: state.idx - 1,
+      }
+      onChange && onChange(newState)
+      return newState
+    }),
+    [setCurrent, onChange],
   )
 
   return (
