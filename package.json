@@ -40,7 +40,7 @@
     "@nonsensebb/eslint-config-preact": "^0.2.0",
     "@nonsensebb/stylelint-config-scss": "^0.2.0",
     "babel-eslint": "^10.1.0",
-    "babel-jest": "^26.2.1",
+    "babel-jest": "^26.2.2",
     "babel-loader": "^8.1.0",
     "classnames": "^2.2.6",
     "css-loader": "^4.1.1",
