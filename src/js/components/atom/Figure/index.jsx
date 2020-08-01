@@ -16,6 +16,7 @@ function Figure(props) {
     ratio,
     style,
     border,
+    contentClassName,
     ...rest
   } = props
 
@@ -39,7 +40,12 @@ function Figure(props) {
       style={computedStyle}
       {...rest}
     >
-      <div className={buildContentClassName({ ratio })}>{children}</div>
+      <div className={buildContentClassName({
+        className: contentClassName,
+        ratio,
+      })}>
+        {children}
+      </div>
 
       {caption && (
         <figcaption className={styles['a-figure__caption']}>
@@ -84,6 +90,7 @@ Figure.propTypes = {
     PropTypes.object,
   ]),
   className: PropTypes.string,
+  contentClassName: PropTypes.string,
   caption: PropTypes.node,
   border: PropTypes.oneOfType([
     PropTypes.bool,
