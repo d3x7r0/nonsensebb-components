@@ -3,14 +3,16 @@
 .a-horizontal-menu {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0;
 
   &__entry {
-    flex: 1;
+    flex: 1 0 auto;
     margin: 0;
     text-align: center;
+    width: auto;
 
     &--left {
       text-align: left;
