@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'preact/hooks'
-import throttle from 'lodash/throttle'
+import throttle from 'lodash-es/throttle'
 
 function getMatchMediaResult(query) {
   if (typeof matchMedia !== 'function') {

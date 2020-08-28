@@ -1,5 +1,5 @@
 import { useMemo } from 'preact/hooks'
-import isObject from 'lodash/isObject'
+import isObject from 'lodash-es/isObject'
 
 export function useDominantColor(color, style) {
   return useCSSVariable('dominant-color', color, style)
