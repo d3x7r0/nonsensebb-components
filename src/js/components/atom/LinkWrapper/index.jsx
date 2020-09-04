@@ -22,4 +22,6 @@ export function OptionalLink(props) {
   }
 }
 
+LinkWrapper.propTypes = {}
+
 export default LinkWrapper
