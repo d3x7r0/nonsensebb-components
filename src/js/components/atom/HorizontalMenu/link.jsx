@@ -30,13 +30,13 @@ function HorizontalMenuLink(props) {
 
   return (
     <LinkWrapper
+      {...rest}
       href={href}
       style={computedStyle}
       className={buildClassNames({
         className,
         active,
       })}
-      {...rest}
     >
       {children}
     </LinkWrapper>

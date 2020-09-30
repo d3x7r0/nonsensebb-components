@@ -70,7 +70,10 @@ function GalleryInner(props) {
 
   if (caption) {
     return (
-      <Figure caption={caption} {...rest}>
+      <Figure
+        {...rest}
+        caption={caption}
+      >
         <GalleryList
           noMargin
           alignBottom={alignBottom}

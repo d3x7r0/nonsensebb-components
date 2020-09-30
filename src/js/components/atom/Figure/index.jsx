@@ -30,12 +30,12 @@ function Figure(props) {
 
   return (
     <figure
+      {...rest}
       className={buildClassName({
         className,
         border,
       })}
       style={computedStyle}
-      {...rest}
     >
       <div className={buildContentClassName({
         className: contentClassName,

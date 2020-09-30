@@ -11,10 +11,8 @@ function GalleryListEntry(props) {
 
   return (
     <li
-      className={buildClassNames({
-        className,
-      })}
       {...rest}
+      className={buildClassNames({ className })}
     >
       {children}
     </li>

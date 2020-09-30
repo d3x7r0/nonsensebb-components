@@ -10,9 +10,10 @@ function VerticalListEntry(props) {
   } = props
 
   return (
-    <li className={buildClassNames({
-      className,
-    })} {...rest}>
+    <li
+      {...rest}
+      className={buildClassNames({ className })}
+    >
       {children}
     </li>
   )

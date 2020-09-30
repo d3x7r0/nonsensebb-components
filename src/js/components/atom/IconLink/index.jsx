@@ -28,11 +28,11 @@ function IconLink(props) {
 
   return (
     <LinkWrapper
+      {...rest}
       style={computedStyle}
       className={buildClassNames({
         className,
       })}
-      {...rest}
     >
       {hasLeftIcon ? icon : null} {children} {hasLeftIcon ? null : icon}
     </LinkWrapper>
