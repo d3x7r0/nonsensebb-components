@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
@@ -9,7 +7,6 @@ import styles from './index.module.scss'
 
 function Figure(props) {
   const {
-    class: c,
     className,
     children,
     caption,
@@ -34,7 +31,7 @@ function Figure(props) {
   return (
     <figure
       className={buildClassName({
-        className: c || className,
+        className,
         border,
       })}
       style={computedStyle}

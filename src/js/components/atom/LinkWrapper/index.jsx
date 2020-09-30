@@ -1,5 +1,4 @@
-/** @jsx h */
-import { createContext, h } from 'preact'
+import { createContext } from 'preact'
 import { useContext } from 'preact/hooks'
 
 const LinkContext = createContext(null)

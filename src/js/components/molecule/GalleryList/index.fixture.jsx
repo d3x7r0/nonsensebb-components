@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
-
 import GalleryList, { GalleryListEntry } from './index'
 
 import '../../../../css/reset.scss'

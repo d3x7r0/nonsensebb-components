@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
@@ -11,7 +9,6 @@ import styles from './index.module.scss'
 function HorizontalMenuLink(props) {
   const {
     active,
-    class: c,
     className,
     href,
     children,
@@ -36,7 +33,7 @@ function HorizontalMenuLink(props) {
       href={href}
       style={computedStyle}
       className={buildClassNames({
-        className: c || className,
+        className,
         active,
       })}
       {...rest}

@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
@@ -11,7 +9,6 @@ import styles from './index.module.scss'
 
 function IconLink(props) {
   const {
-    class: c,
     className,
     style,
     iconColor,
@@ -33,7 +30,7 @@ function IconLink(props) {
     <LinkWrapper
       style={computedStyle}
       className={buildClassNames({
-        className: c || className,
+        className,
       })}
       {...rest}
     >

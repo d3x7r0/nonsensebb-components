@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
@@ -10,7 +8,6 @@ import styles from './index.module.scss'
 function GalleryList(props) {
   const {
     children,
-    class: c,
     className,
     noMargin,
     alignBottom,
@@ -29,7 +26,7 @@ function GalleryList(props) {
       {...rest}
       style={computedStyle}
       className={buildClassNames({
-        className: c || className,
+        className,
         noMargin,
         alignBottom,
       })}

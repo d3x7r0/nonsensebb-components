@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
@@ -9,7 +7,6 @@ import styles from './index.module.scss'
 
 function Spinner(props) {
   const {
-    class: c,
     className,
     active,
     colorMain,
@@ -35,7 +32,7 @@ function Spinner(props) {
       {...rest}
       style={computedStyle}
       className={buildClassNames({
-        className: c || className,
+        className,
         active,
       })}
     >

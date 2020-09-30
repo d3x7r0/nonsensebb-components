@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
@@ -8,11 +6,11 @@ import { getDisplayName } from '../../utils'
 import styles from './index.module.scss'
 
 export function AsHorizontalMenu(Component, displayName) {
-  const WrappedComponent = ({ class: c, className, balanced, children, ...props }) => (
+  const WrappedComponent = ({ className, balanced, children, ...props }) => (
     <Component
       {...props}
       className={buildClassNames({
-        className: c || className,
+        className,
         balanced,
       })}
     >

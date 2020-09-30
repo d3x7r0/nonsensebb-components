@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
 import { useCallback, useLayoutEffect, useMemo, useState } from 'preact/hooks'
 import ReactImageLightbox from 'react-image-lightbox'
 

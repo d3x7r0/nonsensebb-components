@@ -1,12 +1,9 @@
-/** @jsx h */
-import { h } from 'preact'
 import classNames from 'classnames'
 
 import styles from './index.module.scss'
 
 function VerticalListEntry(props) {
   const {
-    class: c,
     className,
     children,
     ...rest
@@ -14,7 +11,7 @@ function VerticalListEntry(props) {
 
   return (
     <li className={buildClassNames({
-      className: c || className,
+      className,
     })} {...rest}>
       {children}
     </li>

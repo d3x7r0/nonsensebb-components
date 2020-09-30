@@ -1,12 +1,9 @@
-/** @jsx h */
-import { h } from 'preact'
 import classNames from 'classnames'
 
 import styles from './index.module.scss'
 
 function GalleryListEntry(props) {
   const {
-    class: c,
     className,
     children,
     ...rest
@@ -15,7 +12,7 @@ function GalleryListEntry(props) {
   return (
     <li
       className={buildClassNames({
-        className: c || className,
+        className,
       })}
       {...rest}
     >

@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
-
 import { OptionalLink } from './index'
 
 import '../../../../css/reset.scss'

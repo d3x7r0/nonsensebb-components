@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
 import { useValue } from 'react-cosmos/fixture'
 
 import Toast from './index'

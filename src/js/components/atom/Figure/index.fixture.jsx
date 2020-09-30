@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
-
 import '../../../../css/reset.scss'
 
 import Figure from './index'

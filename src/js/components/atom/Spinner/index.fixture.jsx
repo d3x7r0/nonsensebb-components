@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
-
 import Spinner from './index'
 
 import '../../../../css/reset.scss'

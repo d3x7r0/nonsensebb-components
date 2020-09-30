@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
@@ -11,7 +9,6 @@ const DEFAULT_CLOSE_LABEL = 'Close'
 
 function Toast(props) {
   const {
-    class: c,
     className,
     children,
     closeLabel = DEFAULT_CLOSE_LABEL,
@@ -48,7 +45,7 @@ function Toast(props) {
       {...rest}
       style={computedStyle}
       className={buildClassName({
-        className: c || className,
+        className,
       })}
     >
       <div className={styles['m-toast__inner']}>

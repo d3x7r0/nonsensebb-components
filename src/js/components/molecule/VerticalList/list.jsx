@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
@@ -10,7 +8,6 @@ import styles from './index.module.scss'
 function VerticalList(props) {
   const {
     children,
-    class: c,
     className,
     side,
     grid,
@@ -23,7 +20,7 @@ function VerticalList(props) {
     <ul
       {...rest}
       className={buildClassNames({
-        className: c || className,
+        className,
         side,
         noMargin,
         grid,

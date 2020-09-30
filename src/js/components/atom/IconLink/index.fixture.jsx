@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
 import * as icons from 'react-feather'
 import { useValue } from 'react-cosmos/fixture'
 

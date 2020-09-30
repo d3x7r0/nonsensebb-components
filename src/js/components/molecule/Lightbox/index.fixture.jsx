@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from 'preact'
-
 import LightboxEntry, { LightboxWrapper } from './index'
 
 import '../../../../css/reset.scss'

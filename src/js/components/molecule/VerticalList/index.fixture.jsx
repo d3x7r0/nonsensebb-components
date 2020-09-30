@@ -1,7 +1,4 @@
 /* eslint-disable react/jsx-no-literals */
-/** @jsx h */
-import { h } from 'preact'
-
 import { SIDE_LEFT } from '../../../constants'
 
 import VerticalList, { VerticalListEntry } from './index'

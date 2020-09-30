@@ -1,6 +1,4 @@
 /* eslint-disable react/jsx-no-literals */
-/** @jsx h */
-import { h } from 'preact'
 import PropTypes from 'prop-types'
 
 import Toast from '../../molecule/Toast'
