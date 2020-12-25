@@ -25,15 +25,12 @@ export default () => {
   const IconComponent = icon in icons ? icons[icon] : null
 
   return (
-    (
-      <IconLink
-        iconColor={color}
-        IconComponent={IconComponent}
-        side={side}
-      >
-        {LABEL}
-      </IconLink>
-    )
-
+    <IconLink
+      iconColor={color}
+      IconComponent={IconComponent}
+      side={side}
+    >
+      {LABEL}
+    </IconLink>
   )
 }

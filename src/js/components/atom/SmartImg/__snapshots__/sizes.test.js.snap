@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/atom/SmartImg calculateSizes handles max value correctly 1`] = `
+Array [
+  120,
+]
+`;
+
+exports[`components/atom/SmartImg calculateSizes handles max value correctly 2`] = `
+Array [
+  120,
+  160,
+  240,
+  320,
+  480,
+  768,
+  920,
+  1280,
+  1600,
+]
+`;
+
+exports[`components/atom/SmartImg calculateSizes handles max value correctly 3`] = `
+Array [
+  120,
+  160,
+  240,
+  320,
+  480,
+  768,
+  920,
+  1280,
+  1600,
+  1920,
+]
+`;
+
+exports[`components/atom/SmartImg calculateSizes handles max value correctly 4`] = `
+Array [
+  120,
+  160,
+  240,
+  320,
+  480,
+  768,
+  920,
+  1280,
+  1600,
+  1920,
+  2560,
+  3840,
+]
+`;
+
+exports[`components/atom/SmartImg calculateSizes handles min and max values correctly 1`] = `
+Array [
+  120,
+]
+`;
+
+exports[`components/atom/SmartImg calculateSizes handles min and max values correctly 2`] = `
+Array [
+  320,
+  480,
+  768,
+  920,
+  1280,
+  1600,
+]
+`;
+
+exports[`components/atom/SmartImg calculateSizes handles min and max values correctly 3`] = `
+Array [
+  920,
+  1280,
+  1600,
+  1920,
+  2560,
+  3840,
+]
+`;
+
+exports[`components/atom/SmartImg calculateSizes handles min value correctly 1`] = `
+Array [
+  120,
+  160,
+  240,
+  320,
+  480,
+  768,
+  920,
+  1280,
+  1600,
+  1920,
+  2560,
+  3840,
+]
+`;
+
+exports[`components/atom/SmartImg calculateSizes handles min value correctly 2`] = `
+Array [
+  1280,
+  1600,
+  1920,
+  2560,
+  3840,
+]
+`;
+
+exports[`components/atom/SmartImg calculateSizes handles min value correctly 3`] = `Array []`;
