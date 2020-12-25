@@ -1,0 +1,37 @@
+@import "../../../../css/mixins";
+
+.a-ratio-box {
+  margin: 0 auto;
+  max-width: 100%;
+  text-align: center;
+
+  @include clearfix(true);
+
+  &__content {
+    &,
+    & > * {
+      height: auto;
+      max-width: 100%;
+    }
+
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
+  &__content--with-ratio {
+    height: 0;
+    // falls back to 16/9, but otherwise uses ratio from HTML
+    padding-bottom: calc(var(--aspect-ratio, 0.5625) * 100%);
+    position: relative;
+
+    & > * {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+}
