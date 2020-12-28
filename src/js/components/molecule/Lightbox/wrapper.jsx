@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { useCallback, useLayoutEffect, useMemo, useState } from 'preact/hooks'
 import ReactImageLightbox from 'react-image-lightbox'
 
@@ -6,7 +7,11 @@ import { LightboxProvider } from './context'
 
 // TODO: control gallery by hash
 function LightboxWrapper(props) {
-  const { children, onChange } = props
+  const {
+    children,
+    loop = false,
+    onChange,
+  } = props
 
   const [entries, setEntries] = useState({})
   const [sort, triggerSort] = useState(0)
@@ -77,10 +82,10 @@ function LightboxWrapper(props) {
     }
   }, [entries, sort])
 
-  const currentEntries = entries[state.group] || []
-  const { data: currentEntry } = currentEntries[state.idx] || {}
-  const { data: nextEntry } = state.idx < currentEntries.length && currentEntries[state.idx + 1] || {}
-  const { data: prevEntry } = state.idx > 0 && currentEntries[state.idx - 1] || {}
+  const currentEntries = useMemo(() => entries[state.group] || [], [entries, state.group])
+  const { data: currentEntry } = findCurrentEntry(currentEntries, state.idx)
+  const { data: nextEntry } = findNextEntry(currentEntries, state.idx, loop)
+  const { data: prevEntry } = findPreviousEntry(currentEntries, state.idx, loop)
 
   const close = useCallback(
     () => {
@@ -105,24 +110,24 @@ function LightboxWrapper(props) {
     () => setCurrent(state => {
       const newState = {
         ...state,
-        idx: state.idx + 1,
+        idx: state.idx + 1 === currentEntries.length ? 0 : state.idx + 1,
       }
       onChange && onChange(newState)
       return newState
     }),
-    [setCurrent, onChange],
+    [currentEntries, setCurrent, onChange],
   )
 
   const onMovePrevRequest = useCallback(
     () => setCurrent(state => {
       const newState = {
         ...state,
-        idx: state.idx - 1,
+        idx: state.idx === 0 ? currentEntries.length - 1 : state.idx - 1,
       }
       onChange && onChange(newState)
       return newState
     }),
-    [setCurrent, onChange],
+    [currentEntries, setCurrent, onChange],
   )
 
   return (
@@ -141,6 +146,39 @@ function LightboxWrapper(props) {
       />}
     </LightboxProvider>
   )
+}
+
+function findCurrentEntry(currentEntries = [], idx) {
+  return currentEntries[idx] || {}
+}
+
+function findNextEntry(currentEntries = [], idx, loop) {
+  if (idx < currentEntries.length - 1) {
+    return currentEntries[idx + 1] || {}
+  }
+
+  if (loop && currentEntries.length > 1) {
+    return currentEntries[0] || {}
+  }
+
+  return {}
+}
+
+function findPreviousEntry(currentEntries = [], idx, loop) {
+  if (idx > 0) {
+    return currentEntries[idx - 1] || {}
+  }
+
+  if (loop && currentEntries.length > 1) {
+    return currentEntries[currentEntries.length - 1] || {}
+  }
+
+  return {}
+}
+
+LightboxWrapper.propTypes = {
+  loop: PropTypes.bool,
+  onChange: PropTypes.func,
 }
 
 export default LightboxWrapper
