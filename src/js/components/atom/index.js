@@ -1,6 +1,7 @@
 export Figure from './Figure'
 export * from './HorizontalMenu'
 export IconLink from './IconLink'
+export IconText from './IconText'
 export * from './LinkWrapper'
 export RatioBox from './RatioBox'
 export * from './SmartImg'

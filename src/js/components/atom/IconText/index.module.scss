@@ -1,0 +1,12 @@
+@import "../../../../css/variables";
+
+.a-icon-text.a-icon-text {
+  color: currentColor;
+}
+
+.a-icon-text__icon {
+  color: $altDominantColor;
+  display: inline-block;
+  margin: 0 0.4em 0.06em;
+  vertical-align: bottom;
+}
