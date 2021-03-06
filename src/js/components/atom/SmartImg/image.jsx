@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import isString from 'lodash-es/isString'
 import omit from 'lodash-es/omit'
 import pick from 'lodash-es/pick'
+import isNil from 'lodash-es/isNil'
 
 import { buildSources } from './sources'
 import { Context, SmartImgPropTypes } from './context'
@@ -14,7 +15,7 @@ function parseProps(ctx = {}, props = {}) {
     max: props.maxSize || ctx.maxSize,
     maxWidth: props.defaultSize || ctx.defaultSize,
     sizes: props.sizes || ctx.sizes,
-    lazy: props.lazy || ctx.lazy,
+    lazy: isNil(props.lazy) ? ctx.lazy : props.lazy,
     placeholder: props.placeholder || ctx.placeholder,
     crop: props.crop || ctx.crop,
     formats: props.formats || ctx.formats,
