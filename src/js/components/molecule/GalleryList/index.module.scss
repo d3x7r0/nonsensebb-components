@@ -19,7 +19,7 @@
 
     a img {
       outline: 0 solid $altDominantColor;
-      transition: ($transitionDuration/4) outline;
+      transition: ($transitionDuration*0.25) outline;
 
       &:hover,
       &:active,

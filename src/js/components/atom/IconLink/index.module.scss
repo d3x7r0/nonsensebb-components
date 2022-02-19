@@ -4,7 +4,7 @@
   color: currentColor;
   opacity: 1;
   text-decoration: none;
-  transition: ($transitionDuration/2) opacity;
+  transition: ($transitionDuration*0.5) opacity;
 
   &:hover,
   &:active,

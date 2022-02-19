@@ -7,7 +7,7 @@ import '../../../../css/reset.scss'
 const TOAST_TEXT = 'This is a simple toast'
 const CLOSE_LABEL = 'Close'
 
-export default () => {
+const ToastFixture = () => {
   const [closeLabel] = useValue('closeLabel', {
     defaultValue: CLOSE_LABEL,
   })
@@ -41,3 +41,5 @@ export default () => {
     </Toast>
   )
 }
+
+export default ToastFixture

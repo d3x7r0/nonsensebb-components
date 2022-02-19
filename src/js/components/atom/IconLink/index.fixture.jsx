@@ -1,3 +1,4 @@
+/* eslint import/namespace: ['error', { allowComputed: true }] */
 import * as icons from 'react-feather'
 import { useValue } from 'react-cosmos/fixture'
 
@@ -9,7 +10,7 @@ import '../../../../css/reset.scss'
 
 const LABEL = 'Icon Link Label'
 
-export default () => {
+const IconLinkStory = () => {
   const [side] = useValue('side', {
     defaultValue: SIDE_LEFT,
   })
@@ -34,3 +35,5 @@ export default () => {
     </IconLink>
   )
 }
+
+export default IconLinkStory

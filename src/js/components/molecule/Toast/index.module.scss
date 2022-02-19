@@ -22,7 +22,7 @@ $cornerSize: 1em;
   a {
     cursor: pointer;
     text-decoration: none;
-    transition-property: ($transitionDuration/2) opacity;
+    transition-property: ($transitionDuration*0.5) opacity;
 
     &,
     &:hover,
